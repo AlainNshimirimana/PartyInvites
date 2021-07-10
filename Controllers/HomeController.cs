@@ -20,7 +20,7 @@ namespace PartyInvites.Controllers
         }
 
         [HttpGet]
-        public ViewResult RsvpForm()
+        public ViewResult RsvpForm()   //Presents an empty rsvp form
         {
             return View();
         }
@@ -31,6 +31,12 @@ namespace PartyInvites.Controllers
             //ToDo: store guest response
             Repository.AddResponse(guestResponse);
             return View("Thanks", guestResponse);
+        }
+
+        public ViewResult ListResponses()    //Returns the guest list
+        {
+            return View(Repository.Responses.Where(r => r.WillAttend == true)
+                .OrderBy(r => r.FirstName));
         }
     }
 }
