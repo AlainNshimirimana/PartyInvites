@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta name="viewport" content="width=device-width" />
+   <title>Index</title>
+</head>
+<body>
+   <div>
+      @ViewBag.Greeting World
+      <p>We're going to have an exciting party.</p>
+      <a asp-action="RsvpForm">RSVP Now</a>   <!--This link will send user to rsvp form-->
+   </div>
+</body>
+</html>
