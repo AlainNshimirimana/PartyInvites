@@ -20,18 +20,22 @@
          <label asp-for="FirstName">First Name:</label>
          <input asp-for="FirstName" />
       </p>
+      <span asp-validation-for="FirstName" style="color:palevioletred"></span>
       <p>
          <label asp-for="LastName">Last Name:</label>
          <input asp-for="LastName" />
       </p>
+      <span asp-validation-for="LastName" style="color:palevioletred"></span>
       <p>
          <label asp-for="Email">Email:</label>
          <input asp-for="Email" />
       </p>
+      <span asp-validation-for="Email" style="color:palevioletred"></span>
       <p>
          <label asp-for="Phone">Phone:</label>
          <input asp-for="Phone" />
       </p>
+      <span asp-validation-for="Phone" style="color:palevioletred"></span>
       <p>
          <label>Will you attend?</label>
          <select asp-for="WillAttend">
@@ -40,6 +44,7 @@
             <option value="false">No, I can't come</option>
          </select>
       </p>
+      <span asp-validation-for="WillAttend" style="color:palevioletred"></span>
       <button type="submit">Submit RSVP</button>
    </form>
 </body>

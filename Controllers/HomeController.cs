@@ -29,8 +29,16 @@ namespace PartyInvites.Controllers
         public ViewResult RsvpForm(GuestResponse guestResponse)
         {
             //ToDo: store guest response
-            Repository.AddResponse(guestResponse);
-            return View("Thanks", guestResponse);
+            if (ModelState.IsValid)
+            {
+                Repository.AddResponse(guestResponse);
+                return View("Thanks", guestResponse);
+            }
+            else
+            {
+                //there is a validation error
+                return View();
+            }
         }
 
         public ViewResult ListResponses()    //Returns the guest list
