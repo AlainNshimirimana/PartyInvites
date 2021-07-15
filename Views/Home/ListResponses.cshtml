@@ -11,29 +11,33 @@
 <head>
    <meta name="viewport" content="width=device-width" />
    <title>Responses</title>
+   <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
-   <h2> Guest List</h2>
-   <table>  <!--Print a list of guests-->
-      <thead>
-         <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-         </tr>
-      </thead>
-      <tbody>
-         @foreach (PartyInvites.Models.GuestResponse r in Model)
-         {
+   <div class="card-body">
+      <h2 class="text-center"> Guest List</h2>
+      <table class="table table-sm table-striped table-bordered">
+         <!--Print a list of guests-->
+         <thead>
             <tr>
-               <td>@r.FirstName</td>
-               <td>@r.LastName</td>
-               <td>@r.Email</td>
-               <td>@r.Phone</td>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>Email</th>
+               <th>Phone</th>
             </tr>
-         }
-      </tbody>
-   </table>
+         </thead>
+         <tbody>
+            @foreach (PartyInvites.Models.GuestResponse r in Model)
+            {
+               <tr>
+                  <td>@r.FirstName</td>
+                  <td>@r.LastName</td>
+                  <td>@r.Email</td>
+                  <td>@r.Phone</td>
+               </tr>
+            }
+         </tbody>
+      </table>
+   </div>
 </body>
 </html>
